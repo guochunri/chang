@@ -9,6 +9,19 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container-fluid">
+      <!--=== navbar ===-->
+      <div class="row">
+        <%= render "common/navbar" %>
+      </div>
+
+      <!--=== 提示信息 ===-->
+      <%= render "common/flashes" %>
+
+      <!--=== 网站内容 ===-->
+      <%= yield %>
+    </div>
+
+    <%= render "common/footer" %>
   </body>
 </html>

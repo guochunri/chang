@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-md-12">
+    <% if current_page?('/') %>
+      <div class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
+    <% else %>
+      <div class="navbar navbar-default navbar-fixed-top show_bgcolor" role="navigation">
+    <% end %>
+      <div class="container">
+        <div class="navbar-header">
+          <!--=== 右侧下拉选单（移动端显示） ===-->
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-4" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!--=== 网站 Logo/名称 ===-->
+          <%= link_to root_path, class: "navbar-brand logo-box scroll" do %>
+            <%= image_tag("logo.png") %> 畅世界
+          <% end %>
+        </div>
+        <div class="collapse navbar-collapse top-nav" id="menu-4">
+          <!--=== 网站链接 ===-->
+          <ul class="nav navbar-nav navbar-left">
+            <li><%= link_to "赛事视频", "#" %></li>
+            <li><%= link_to "科技创新", "#", class: "scroll" %></li>
+            <li><%= link_to "关于我们", "#", class: "scroll" %></li> -->
+          </ul>
+          <!--=== 账号操作 ===-->
+          <ul class='nav navbar-nav  navbar-right'>
+            <li class="divider" role="separator"></li>
+            <% if user_signed_in? %>
+              <ul class="nav navbar-nav navbar-right">
+                <li><%= link_to "登出", destroy_user_session_path, method: :delete%></li>
+              </ul>
+            <% else %>
+              <ul class="nav navbar-nav navbar-right">
+                <li><%= link_to "注册", new_user_registration_path %></li>
+                <li><%= link_to "登录", new_user_session_path %></li>
+              </ul>
+            <% end %>
+          </ul>
+          <!-- 搜索栏 -->
+          <%= form_tag "#", :method => :get, class: "navbar-form pull-right" do %>
+            <div class="input-group search-box">
+              <input type="text" class="form-control" name="keyword" placeholder="寻找精彩视频" value="<%= params[:keyword] %>">
+              <div class="input-group-btn">
+                <button class="btn btn-default" type="submit">
+                  <span><i class="fa fa-search"></i></span>
+                </button>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

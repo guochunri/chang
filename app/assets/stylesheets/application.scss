@@ -17,3 +17,21 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
+
+
+ /*===== Logo ======*/
+  .logo-box {
+  margin-right: 15px;
+  font-family: 'Oswald', sans-serif; /* Google字型 */
+  font-size: 20px;
+
+    img {
+      display: inline-block;
+      margin-top: -15px;
+      margin-bottom: -12px;
+      margin-right: 8px;
+      margin-left: -80px;
+      width: 70px;
+      height: 40px;
+     }
+   }
